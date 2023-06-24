@@ -1,0 +1,154 @@
+
+Redierection In Angular
+ ---------------------
+
+Link    -   href / routerLink
+
+methoid -   navigateByUrl() -   used to redeirect to other pages
+class   -   Router
+module  -   AppRoutingModule
+
+Packing     -   Folder  -   Contain many No of files   -   Collections of Modules
+module      -   files   -   Contain Collections of Classes
+CLas                    -   Contain Collections of methods
+
+
+
+ Data Binding In Angular
+ ----------------------
+
+    Html    -   Ts
+    View    -   Component
+
+    1:  One Way Data Binding
+
+        1.1     - Component to View
+
+            1.1.1   - String interPollation {{}}
+            1.2.2   - Property Binding [propertyName] = 'Value'
+
+        1.2     - View To Component
+
+            1.2.1   - event Binding (eventName) = 'methodName()'        -   Click
+            1.2.2   - $event Binding (eventName) = 'methodNAme($event)' -   Change
+
+
+    2:  Two way Data Binding
+
+            2.1     - ngModel 
+
+                    - FormsModule   - module
+
+
+
+
+
+Life Cycle blocks Of Angular Component
+ ------------------------------------
+
+
+Constructor    -->   ngOnInit    -->    other methods 
+
+
+
+
+Depemdemcy Injection 
+--------------------
+
+Used to access datas and methods of one class in another class ( like Inhertance ) 
+
+-   inside construtor()
+-   access specifier    -   private / public
+
+        Constructor (private / public       reference : ClassName)
+
+
+profile View
+balance check
+money transfer
+account statement
+delete account
+logout
+
+
+
+Angular Services
+-----------------
+
+A file Used to keep data and methods that can access by and Component in that module
+
+For craeting a service file
+
+        ng g s serviceName 
+
+
+
+
+Api -    Creation
+-----------------
+
+HttpClientModule    ->   Module
+HttpClient          ->   Class 
+
+Methods -   
+            get , put , post , patch , delete   ---:=   These Are available in HttpClient Class
+                                                ( and )                         
+            HttpClient is Inside on HttpClientModule
+
+
+Asynchronous In TypeScript
+-------------------------
+
+js  -   promise     -   then()          -> Resolve
+                    -   catch()         -> Error
+
+ts  -   observable  -   subscribe()     
+                    -   catch()         -> Error
+
+
+
+Form Creation in Angular
+-----------------------
+
+1.  template driven form
+2.  model    driven form  
+
+
+
+
+
+
+
+
+
+Server
+------
+
+    1.  For craeting a Server u need to create a new folder name as bank_server then open the created folder then open terminal in that folder
+
+        -   npm init , yes , yes etc.... is this ok? (yes) 
+
+    2.  then install express
+
+        -   npm i express   
+
+    3.  then create     - index.js
+
+        for creating a Server
+
+            *-  import express 
+            *-  server using express
+            *-  set port to run server
+            
+                
+
+
+Nodemon
+-------
+
+    we can nodemon instead of node for automatic recomblelation
+
+
+
+
+

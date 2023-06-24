@@ -1,0 +1,11 @@
+<div *ngIf="item" class="border-2 container border border-secondary w-50 mt-2 mb-3 bg-light"> 
+    <div class="mt-2 mb-3 container">
+        <p class="text-secondary"> <span class="" style="font-weight: 700;"> are You sure !! </span> do you want to delete your account ? {{item}} </p>
+
+        <div class="rounded-5 btn-group border-0 border border-secondary" style="background-color: rgba(255, 255, 255, 0.47);">
+            <button (click)="deleteAc()" class=" border-2 border border-secondary btn btn-outline-info rounded-5 text-danger" style="height: 50px; width: 60px;"> Yes  </button> <button class="bg-light border-0"></button> 
+            <button (click)="cancel()" style="height: 50px; width: 60px;" class="border-2 border border-secondary btn btn-outline-dark rounded-5 text-danger"> No </button>
+        </div>
+
+    </div> 
+</div>

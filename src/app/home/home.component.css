@@ -1,0 +1,20 @@
+#inpoutborder {
+    border: none;
+    background-color: rgb(222, 220, 125);
+    color: rgb(255, 255, 255);
+}
+
+
+.c1 {
+    color: green;
+}
+
+
+.c2 {
+    color: red;
+}
+
+
+.s {
+    visibility: hidden;
+}

@@ -1,0 +1,283 @@
+
+
+<div class="row w-100" style="font-family: Arial, Helvetica, sans-serif;">
+
+    <div class="container col-md-4 mt-5">
+
+        <div class="container col-md-12 border border-dark border-5 rounded-5 bg-info pe-2 ms-3">        
+
+            <div class="container btn-group-vertical mt-3 mb-3" role="group" aria-label="Vertical button group ">
+            
+                <div class="btn-group m-2 p-2 mt-4" role="group">
+                    <button type="button" id="e" data-bs-toggle="modal" data-bs-target="#exampleModal" class="container border-2 btn btn-info text-white border rounded-5 me-3 " aria-expanded="false" 
+                    (click)="AccessUser()" >
+                        <i class="fa-regular fa-user me-2 text-danger"></i>  Profile View 
+                    </button>
+                       
+                </div>
+            
+                <div class="btn-group m-2 p-2" role="group">
+                    <button type="button" id="e" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" class="container border-2 btn btn-info text-white border rounded-5 me-3 " aria-expanded="false"
+                    (click)="AccessBalance()" >
+                        <i class="fa-solid fa-sack-dollar me-2 text-danger"></i> Balance Enquiry
+                    </button>
+                      
+                </div>
+            
+                <div class="btn-group m-2 p-2" role="group">
+                    <button type="button" id="e" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="container border-2 btn btn-info text-white border rounded-5 me-3 " aria-expanded="false">
+                        <i class="fa-solid fa-money-bill-transfer me-2 text-danger"></i> Money transfer
+                    </button>
+                      
+                </div>
+
+                <div class="btn-group m-2 p-2">
+                    <a href="/transaction" target="_blank" type="button" id="e" data-bs-toggle="" data-bs-target="" class="container border-2 btn btn-info text-white border rounded-5 me-3 " aria-expanded="false">
+                        <i class="fa-solid fa-rectangle-list me-2 text-danger"></i> Account Statement
+                    </a>
+                </div>
+
+                <div class="btn-group m-2 p-2" role="group">
+                    <button (click)="deleteAc()" type="button" id="e" data-bs-toggle="modal" data-bs-target="" class="container border-2 btn btn-info text-white border rounded-5 me-3 " aria-expanded="false">
+                        <i class="fa-solid fa-user-xmark me-2 text-danger"></i> Delete Account
+                    </button>
+                       
+                </div>
+
+                <div class="btn-group m-2 p-2" role="group">
+                    <button type="button" id="e" data-bs-toggle="modal" data-bs-target="" class="container border-2 btn btn-info text-white border rounded-5 me-3 " aria-expanded="false">
+                        <i class="fa-solid fa-person-military-pointing me-2 text-danger"></i> Customer Care
+                    </button>
+                      
+                </div>
+
+                <div class="btn-group m-2 p-2" role="group">
+                    <button type="button" id="e" data-bs-toggle="modal" data-bs-target="" class="container border-2 btn btn-info text-white border rounded-5 me-3 " aria-expanded="false" 
+                    (click)="logOut()" >
+                        <i class="fa-solid fa-right-from-bracket me-2 text-danger"></i> LogOut
+                    </button>
+                        <!-- <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-center" href="#"> 11.... </a></li>
+                            <li><a class="dropdown-item text-center" href="#"> 12.... </a></li>
+                        </ul> -->
+                </div>
+
+                <div class="btn-group m-2 p-2" role="group">
+                    <button type="button" id="e" data-bs-toggle="modal" data-bs-target="" class="container border-2 btn btn-info text-white border rounded-5 me-3" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-money-check-dollar me-2 text-danger fa-2x"></i>
+                    </button>
+                       
+                </div>
+
+                
+                <div class="btn-group m-2 p-2 mb-4" role="group">
+                    <button type="button" id="e" data-bs-toggle="modal" data-bs-target="" class="container border-2 btn btn-info text-white border rounded-5 me-3 " data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-brands fa-rocketchat me-2 text-danger fa-2x"></i> Etc...
+                    </button>
+                       
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+
+    <div class="col-md-8 text-center p-5">
+
+        <h2 [ngClass]=" acno1 ? 's' : '' " class="mb-4"> Welcome <span class="text-danger border-bottom border-3 border-info"> {{uname}} </span> </h2>
+
+        <h1 [ngClass]=" acno1 ? 's' : '' " id="d" style="color: rgb(18, 23, 121);" class="ms-3 container mb-3"> Enjoy Net Banking With <span class="text-danger">HDFC</span>  </h1>
+
+        <app-delete  (onDelete)="deleteAccount($event)"  [item] = "acno1" (onCancel)="cancelChild()" ></app-delete>
+
+        <p [ngClass]=" acno1 ? 's' : '' " id="d" class="ms-3 container text-start border border-info mb-"> A bank is a financial institution that accepts deposits from the public and creates a demand deposit while simultaneously making loans.[1] Lending activities can be directly performed by the bank or indirectly through capital markets. Whereby banks play an important role in financial stability and the economy of a country, most jurisdictions exercise a high degree of regulation over banks. Most countries have institutionalized a system known as fractional-reserve banking, under which banks hold liquid assets equal to only a portion of their current liabilities. </p>
+
+        <img [ngClass]=" acno1 ? 's' : '' " style=" width: 100%;" id="d" class="ms-3 rounded-5" src="https://i.postimg.cc/8Cqt5k1B/ty.webp" alt="">
+
+    </div>
+
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered ">
+        
+        <div class="modal-content rounded-5">
+
+            <!-- <div class="modal-header" style="background-color: rgb(110, 44, 44); color: rgb(255, 255, 255); border: none;">
+            <h1 class="modal-title fs-4 " id="exampleModalLabel"> Profile View </h1>
+            <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+            </div> -->
+
+            <div class="modal-body bg-dark rounded-4" id="d">
+            
+                <div class="mt-3"> 
+
+                    <div class="text-center">
+                        <img class="w-25 rounded-circle" src="https://i.postimg.cc/Gp1rLNJ6/avatar.jpg" alt="">
+                    </div>
+
+                    <div class="text-center rounded-5  me-2 ms-2 mt-2">
+                        <h3 class="text-warning text-center border-bottom border-3 border-danger text-center me-5 ms-5 mb-4 rounded-5">  Account Detals <i class="fa-brands fa-stack-overflow ms-2"> </i> </h3>
+                    </div>
+
+                </div>
+
+                <div class="p-5 rounded-circle" style="background-color: rgb(43, 179, 195);">
+
+                    <h4 class="text-white" style="font-family: Georgia, 'Times New Roman', Times, serif;"> User Name  : 
+                            <span class="text-danger" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> {{UserData.uname}} </span> 
+                    </h4>
+                                                                        <hr>
+                    <h4 class="text-white" style="font-family: Georgia, 'Times New Roman', Times, serif">  Account Number  :
+                            <span class="text-danger" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> {{acno}} </span> 
+                    </h4>
+                                                                        <hr>
+                </div>
+
+            
+        
+                <div class="text-center rounded-5 mt-3" style="background-color: rgb(110, 44, 44); color: rgb(255, 255, 255); border: none;">    
+
+                    <button type="button" id="e" class=" mb-3 mt-3 btn btn-dark w-25 rounded-5 border-0" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+  
+<!-- OffCanvas -->
+    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+
+        <!-- <div class="offcanvas-header" style="background-color: rgb(110, 44, 44); color: rgb(255, 255, 255); border: none;">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel"> Balance </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div> -->
+
+        <div class="offcanvas-body text-center mt-5" id="d">
+            
+            <div class="mt-2">
+                <img class="w-75 rounded-5 mb-4" src="https://i.postimg.cc/dtj1CywS/cc.jpg" alt="">
+
+                <h5 class="text-start" > Account Number  : <span class="text-danger" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> {{acno}} </span> </h5>
+                <h5 class="text-start" > Current Balance : <span class="text-danger" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> {{balance}} </span> <i class="fa-solid fa-indian-rupee-sign ms-2" style="height: 3px;" ></i> </h5> 
+            </div>
+
+            <hr>
+
+            <div class="mb-3 rounded-5" style="background-color: rgb(110, 44, 44); border: none;">
+    
+                <div class="dropdown text-center" >
+                    <button class="btn btn-secondary dropdown-toggle mt-3 rounded-2 mb-5" id="e" type="button" data-bs-toggle="dropdown">
+                        Dropdown 
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            
+            <button type="button" class="btn btn-dark mt-3 text-danger border border-warning mb-3 rounded-5 w-25" data-bs-dismiss="offcanvas">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!--  LogOut  -->
+
+
+
+
+
+    <!-- Money Transfer Button trigger modal -->
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+
+            <div class="modal-content rounded-4 border-0 bg-dark" id="d">
+
+                <!-- <div class="modal-header text-center " style="background-color: rgb(110, 44, 44); color: rgb(255, 255, 255); border: none;">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel"> Payment  </h1>
+
+                    <button type="button" class="btn-close border-0" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div> -->
+
+                    <div class="modal-body" style="color: rgb(253 , 253 , 253); background-color: rgb(37,201,238);">
+                    
+                        <form [formGroup]="transaction" action="" class="p-3 text-center">
+
+                            <div class="me-4 ms-4">
+                                <h3 class="text-secondary border-bottom border-3 border-danger text-center me-5 ms-5 mb-5 rounded-5"> Money Transfer <span> <i class="fa-solid fa-handshake-angle"></i> </span> </h3>
+                            </div>
+                            
+                            <input formControlName = "Acno" id="inpoutborder" type="text" class="form-control mt-4" placeholder="Recipient Account Number">
+                            
+                            <div *ngIf="(transaction.get('Acno')?.errors) && (transaction.get('Acno')?.touched)" >
+                                <p class="text-danger mt-2" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 13px;"> must contains Numbers </p>
+                            </div>
+
+                            <input formControlName = "Amt" id="inpoutborder" type="text" class="form-control mt-4" placeholder="Amount To Send">
+                            
+                            <div *ngIf="(transaction.get('Amt')?.errors) && (transaction.get('Amt')?.touched)" >
+                                <p class="text-danger mt-2" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 13px;"> must contains Numbers </p>
+                            </div>
+
+                            <input formControlName = "Psw" id="inpoutborder" type="password" class="form-control mt-4" placeholder="password">
+
+                            <div *ngIf="(transaction.get('Psw')?.errors) && (transaction.get('Psw')?.touched)" >
+                                <p class="text-danger mt-2" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 12px;"> contains Charaters , Numbers & Symbols Etc..  </p>
+                            </div>
+
+                            <button type="button" id="e" class="border-0 mt-5 p-2 w-50 btn btn-secondary" (click)="TransferMoney()">
+                                Send Money
+                            </button> 
+
+                        </form>
+                        
+                    </div>
+
+                    <div class="text-center" style="background-color: rgb(68, 32, 32); color: rgb(255, 255, 255); border: none;">
+
+                        <div class="me-4 ms-4">
+                            <div class="me-5 ms-5">
+                                <p [ngClass]=" alertColor?'c1':'c2' " class="mt-2 border-top border-bottom border-3 border-danger me-5 ms-5 rounded-5"> {{alertMessage}} </p>
+                            </div>
+                        </div>
+                        
+                        <button type="button" id="d" class="mb-2 btn btn-dark border border-info rounded-5 w-25 mb-3" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <!-- <button type="button" class="btn btn-primary border-0 text-center">
+                            Understood
+                        </button> -->
+                    </div>
+
+            </div>
+            
+        </div>
+
+    </div>

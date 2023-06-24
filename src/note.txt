@@ -1,0 +1,273 @@
+Redirection In Angular
+ --------------------
+
+link        - href / routerLink
+
+method      - navigateByUrl()   - Used to redirect to other pages
+class       - Router
+Module      - AppRoutingModule 
+
+
+Package     - Folder    - contain many No of Files  - Collections Of Modules 
+Module      - Files     - contain collection of classes
+class       - contain collections of method
+
+
+
+Data Binding In Angular
+ ---------------------
+
+html        -   TypeScript
+                    |
+view        -   component
+
+
+1. One Way Data Binding
+
+    1.1     - component to view
+
+        1.1.1       - String Interpollation = symbols :=      {{}}
+        1.1.2       - Property Binding   := [PropertyNmae] = 'Value'
+
+    1.2     - view to component
+
+        1.2.1       - Event Binding (eventName) = 'methodName'                  =: click
+        1.2.2       - Dolor $ Event Binding (eventName) = 'methodName($event)'  =: change
+        1.2.3       - Event Binding with template rendering Variable = (event) ='method(templateRenderingVariable)' 
+
+2. Two Way Data Binding
+
+
+
+Life cycle blocks Of Angular components
+ ______________________________________
+
+
+Constructor    -->    ngOnInit    -->    Others Mathods
+
+Depemdemcy Injection 
+--------------------
+
+Used to access datas and methods of one class in another class ( like Inhertance ) 
+
+-   inside construtor()
+-   access specifier    -   private / public
+
+        Constructor (private / public       reference : ClassName)
+
+
+profile View
+balance check
+money transfer
+account statement
+delete account
+logout
+
+
+
+Angular Services
+-----------------
+
+A file Used to keep data and methods that can access by and Component in that module
+
+For craeting a service file
+
+        ng g s serviceName 
+
+
+
+
+Api -    Creation
+-----------------
+
+HttpClientModule    ->   Module
+HttpClient          ->   Class 
+
+Methods -   
+            get , put , post , patch , delete   ---:=   These Are available in HttpClient Class
+                                                ( and )                         
+            HttpClient is Inside on HttpClientModule
+
+
+Asynchronous In TypeScript
+-------------------------
+
+js  -   promise     -   then()          -> Resolve
+                    -   catch()         -> Error
+
+ts  -   observable  -   subscribe()     
+                    -   catch()         -> Error
+
+
+
+Form Creation in Angular
+-----------------------
+
+1.  template driven form
+
+2.  model    driven form  -  (reactive Forms)  
+            
+            model   :=   group , array , control
+                    
+                    -   reactiveFormsModule -   module
+                    -   FromBuilder         -   class
+
+
+
+reqular Expression for Pattern
+------------------
+to create a pattern Rules
+                    -----
+
+
+'[^0 - 9a - zA - Z] + '
++ min = 1     max = ..
+* min = 0     max =..
+
+
+a - z   -   Small   Letters
+A - Z   -   Capital Letters   
+0 - 9   -   Numbers
+
+^a - Z  -    
+
+
+^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$
+
+
+
+Angular Dierectives
+-------------------
+
+To Manipulate Dom
+
+*   Component  Dierective   -   new component
+*   Structural Dierective   -   ngIf , ngFor 
+*   Attribute  Dierective   -   [ngClass]  
+
+
+
+
+
+jwt     -   (json web token)
+
+-   user authentication
+-   npm i jsonwebtoken
+
+
+
+Header
+-------
+
+HttpHeader  -   class used to create header
+
+
+
+Middlewares
+-----------
+
+
+-   it is a function with 3 arguments (req , res , next)
+-   to control server requests 
+
+2 Types Middlewares
+    -   application specific Middlewares    :=  control all server requests
+    -   router specific Middlewares         :=  control specific server requests
+
+
+
+Solving run-Time errors in js
+-----------------------------
+
+try   -   catch   
+         
+
+
+Angular Pipe
+------------
+
+used to convert data formats in angular
+
+
+ transform(arg1 , arg2 , arg3)
+
+    arg1    -   input data to transform     -   transaction array
+
+    arg2    -   search datau used to transform the input array  -   debit/credit/all
+
+    arg3    -   one data in input array used to match    -   type key in transaction array
+    
+       
+
+
+for Creating Pipe
+-----------------
+
+-   ng g pipe filter
+   
+
+
+
+
+Parent Component to Child Compoennt communication
+-------------------------------------------------
+
+parent child    -   @input()
+child   parent  -   @Ountput()
+
+
+
+Child Component to Parent Compoennt communication
+-------------------------------------------------
+
+event creation 
+
+EventEmitter    -   class used to create events
+
+emit()
+
+
+
+
+
+
+
+
+
+Server
+------
+
+    1.  For craeting a Server u need to create a new folder name as bank_server then open the created folder then open terminal in that folder
+
+        -   npm init , yes , yes etc.... is this ok? (yes) 
+
+    2.  then install express
+
+        -   npm i express   
+
+    3.  then create     - index.js
+
+        for creating a Server
+
+            *-  import express 
+            *-  server using express
+            *-  set port to run server
+            
+                
+
+
+Nodemon
+-------
+
+    we can nodemon instead of node for automatic recomblelation
+
+
+
+
+
+
+
+
+
+
+

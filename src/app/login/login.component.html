@@ -1,0 +1,50 @@
+
+<!-- {{data}} -->
+
+<div class="container text-center" style="margin-top: 50px;">
+
+    <div class="row animate" data-animate="fadeInUp">
+  
+        <div class="col-md-6 bg-info me-4 mb-4 animate" data-animate="fadeInUp" style="border-radius: 20px;">
+
+            <div class="">
+              <h1 class="text-center mt-4 text-white"> Sign In </h1>
+            </div>
+
+            <div class="containerbg-light p-2 mt-4 ms-5 me-5 animate" data-animate="fadeInUp">
+
+                <form [formGroup]="loginForm" id="d" action class="container">
+
+        <!-- (change) = "Account_NoChange($event)" [placeholder]="Pdata" -->
+                    <input formControlName = "acno" id="u1" name="acno" placeholder="Account_No"  autocomplete="off" type="text" class="form-control mt-2 p-2" /> 
+
+                    <div *ngIf="(loginForm.get('acno')?.errors) && (loginForm.get('acno')?.touched)" >
+                        <p class="text-danger mt-2" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> must contains Numbers Only </p>
+                    </div>
+
+                    <input formControlName = "psw" id="p1" name="password" placeholder="Enter Password" type="password" class="form-control mt-3" />
+
+                    <div *ngIf="(loginForm.get('psw')?.errors) && (loginForm.get('psw')?.touched)" >
+                        <p class="text-danger mt-2" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> must contains Charaters , Numbers & Symbols Etc..  </p>
+                    </div>
+
+                       <!-- (click)="login()" -->
+                    <button (click)="login()" style="height: 40px; width: 25%; color: #ff0000; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="container btn btn-info border mt-5 p-2"> login </button>
+
+                    <p class="mt-2" style="color: #ffffff;"> Don't have account ? <br> <a style="text-decoration: none; color: #3e1bba;" class="" routerLink="register"> Create Account </a> </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-5">
+
+          <img id="d" class="w-100" src="https://i.postimg.cc/3NNqnpZS/banks.png" alt="">
+          
+        </div>
+
+    </div>
+    
+</div>

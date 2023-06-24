@@ -1,0 +1,56 @@
+<div class="container text-center" style="margin-top: 35px;">
+
+    <div class="container row animate" data-animate="fadeInUp">
+  
+        <div class="col-md-6 bg-info ms-3 me-4 mb-4 animate" data-animate="fadeInUp" style="border-radius: 20px;">
+
+            <div class="">
+              <h1 class="text-center mt-4 text-white"> Register </h1>
+            </div>
+
+            <div class="containerbg-light p-2 mt-4 animate" data-animate="fadeInUp">
+
+                <form [formGroup] = "registerForm" id="d" action class="container">
+                    <!-- autocomplete="off" -->
+
+                    <input formControlName = "acno" id="u1" name="acno" placeholder="Account_No"  type="text" class="form-control mt-3 p-2"/>
+
+                        <div *ngIf="(this.registerForm.get('acno')?.errors) && (this.registerForm.get('acno')?.touched)" >
+                                <p class="text-danger mt-2" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> must contains Number Only </p>
+                        </div>
+                    
+                    <input formControlName = "uname" id="u2" name="uname" placeholder="UserName"  type="text" class="form-control mt-3 p-2"/>
+
+                        <div *ngIf="(this.registerForm.get('uname')?.errors) && (this.registerForm.get('uname')?.touched)" >
+                            <p class="text-danger mt-2" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> must contains Charaters Only </p>
+                        </div>
+
+                    <input formControlName = "psw" id="p1" name="psw" placeholder="Enter Password" type="password" class="form-control mt-3 p-2"/>
+
+                        <div *ngIf="(this.registerForm.get('psw')?.errors) && (this.registerForm.get('psw')?.touched)" >
+                            <p class="text-danger mt-2" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> contains number Charaters & Symbols </p>
+                        </div>
+
+                    <input formControlName = "cpsw" id="p1" name="cpsw" placeholder="Confirm Password" type="password" class="form-control mt-3 p-2"/>
+
+                        <div *ngIf = "pswCheck">
+                            <p class="text-danger mt-2" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> password doesn't match </p>
+                        </div>
+
+                    <div class="mt-3 p-3">
+                        <button (click)="SignUp()" type="submit" style="height: 40px; width: 35%; color: #ff0000; font-family: Arial, Helvetica, sans-serif;" class="container btn btn-info border"> Sign up </button>
+                    </div>
+
+                </form>     
+            </div>
+
+        </div>
+
+        <div class="col-md-5 ms-3">
+
+          <img id="d" class="w-100 rounded" src="https://i.postimg.cc/N0W2qWpn/banb-signup.jpg" alt="">
+          
+        </div>
+
+    </div>
+</div>

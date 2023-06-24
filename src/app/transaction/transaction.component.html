@@ -1,0 +1,61 @@
+
+
+<div class="container text-center">
+
+    <h1 class="container mt-4 text-center text-warning text-danger" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> Account Statement </h1>  
+
+    <p class="container text-center text-warning text-danger" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> {{date | date : 'fullDate'}} </p>    
+
+    <div class="row text-center">
+
+        <div class="col-md-8">
+    
+            <div class="mt-3 text-center mb-3 border-0">
+                <div style="background-color: rgba(73, 236, 236, 0.47);" class="rounded-5 btn-group btn-group-lg border-2 border border-secondary "role="group" aria-label="Large button group" role="group" aria-label="Basic outlined example">
+                    <button (click)="filterPipe('')" type="button" class="btn btn-outline-light rounded-5 border-0 text-danger"> All </button>
+                    <button (click)="filterPipe('Debit')" type="button" class="btn btn-outline-light rounded-5 border-0 text-danger"> Debit </button>
+                    <button (click)="filterPipe('Credit')" type="button" class="btn btn-outline-light rounded-5 border-0 text-danger"> Credit </button>
+                </div>
+            </div>
+
+            <table class="table table-dark table-striped mt-3 mb-4" id="d">
+
+                <thead class="border-4 border border-danger">
+                    <tr>
+                        <th scope="col"> # </th>
+                        <th scope="col"> Type </th>
+                        <th scope="col"> Amount </th>
+                        <th scope="col"> Date </th> 
+                    </tr>
+                </thead>
+
+                <tbody class="border-2 border-success">
+                    <tr *ngFor=" let i of transaction | filter : searchString : 'type' ; let j = index">
+                        <th scope="row"> {{ j + 1 }} </th>
+                        <td> {{i.type}} </td>
+                        <td> {{i.Amount}} </td>
+                        <td> {{i.Date}} </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div class="mb-4 rounded-5 btn-group border-1 border border-secondary" style="background-color: rgba(73, 236, 236, 0.47);">
+                <button (click)="exportPdf()" class="border-2 border border-secondary btn btn-outline-dark rounded-5 text-danger"> Export as <i class="fa-regular fa-file-pdf text-info"></i> </button>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <img class="w-100 rounded-5" src="https://i.postimg.cc/W1YNBw1T/t.jpg" alt="" id="e">
+
+            <div class="mt-4 rounded-5 btn-group border-1 border border-secondary" style="background-color: rgba(73, 236, 236, 0.47);">
+                <button class="border-2 border border-secondary btn btn-outline-dark rounded-5 text-danger"> Back to Home <i class="fa-solid fa-house-laptop text-info"></i> </button>
+            </div>
+            
+        </div>
+
+    </div>
+    
+</div>
